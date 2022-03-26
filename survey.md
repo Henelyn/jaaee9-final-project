@@ -9,8 +9,7 @@
 - register
     - username, email, password
     - email confirmation
-
-
+    
 - search box
 - chat
 - add a friend
