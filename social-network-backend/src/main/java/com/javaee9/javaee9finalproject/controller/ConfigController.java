@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController //provides us a date in json format. We need InitialConfig as json and provide it to frontend. (Just controller will provide us HTML page)
 @Slf4j  //for logs
 @RequestMapping("/config") //generic endpoint to that controller
-@CrossOrigin("*")  //Mis see on?
+@CrossOrigin("http://localhost:4200") //Mis see on?
 public class ConfigController { //Selle controlleri eesmärk on?
     private final ConfigService configService; //private final...kuidas sellele siis ligi saadaks?
 
