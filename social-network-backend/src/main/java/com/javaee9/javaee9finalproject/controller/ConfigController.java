@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j  //for logs
 @RequestMapping("/config") //generic endpoint to that controller
 @CrossOrigin("http://localhost:4200") //Mis see on?
+// https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy
 public class ConfigController { //Selle controlleri eesmärk on?
     private final ConfigService configService; //private final...kuidas sellele siis ligi saadaks?
 
