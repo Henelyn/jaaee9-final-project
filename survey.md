@@ -1,4 +1,4 @@
-### Social network
+### Social network - business requirements
 - welcome page
     - news feed - last 24 hours
     - information about login

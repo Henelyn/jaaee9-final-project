@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController //provides us just a date in json format. InitialConfig in json. Just controller will provides us HTML page
+@RestController //provides us a date in json format. We need InitialConfig as json and provide it to frontend. (Just controller will provide us HTML page)
 @Slf4j  //for logs
 @RequestMapping("/config") //generic endpoint to that controller
-@CrossOrigin("*")
-public class ConfigController {
-    private final ConfigService configService;
+@CrossOrigin("*")  //Mis see on?
+public class ConfigController { //Selle controlleri eesmärk on?
+    private final ConfigService configService; //private final...kuidas sellele siis ligi saadaks?
 
     public ConfigController(ConfigService configService) {
         this.configService = configService;

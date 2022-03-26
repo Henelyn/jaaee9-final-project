@@ -3,7 +3,7 @@ import {ConfigService} from "../../services/config.service";
 import {Config} from "../../models/config";
 
 @Component({
-  selector: 'app-welcome',
+  selector: 'app-welcome', /*Need to be the same as @index.html*/
   templateUrl: './welcome.component.html',
   styleUrls: ['./welcome.component.css']
 })

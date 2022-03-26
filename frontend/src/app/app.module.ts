@@ -12,6 +12,6 @@ import {HttpClientModule} from "@angular/common/http";
     HttpClientModule
   ],
   providers: [],
-  bootstrap: [WelcomeComponent]
+  bootstrap: [WelcomeComponent] /*2) starting component. By default, AppComponent. We change to welcomeComponent */
 })
 export class AppModule { }
