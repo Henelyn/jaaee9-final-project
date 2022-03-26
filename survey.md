@@ -1,6 +1,7 @@
 ### Social network - business requirements
 - welcome page
-    - news feed - last 24 hours
+    - news feed - last 24 hours (needs logging)
+    - news feed - without login
     - information about login
 - profile
     - username, location, picture (about yourself) -editing
