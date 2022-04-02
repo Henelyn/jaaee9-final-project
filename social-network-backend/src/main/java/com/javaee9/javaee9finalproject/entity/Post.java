@@ -15,11 +15,12 @@ import java.time.ZonedDateTime;
 @Builder
 @Entity
 public class Post {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     String header;
-    String postText;
+    String content;
     String author;
     ZonedDateTime creationTimestamp;
     ZonedDateTime updateTimestamp;

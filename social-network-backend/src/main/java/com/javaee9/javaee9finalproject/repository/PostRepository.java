@@ -19,7 +19,6 @@ public interface PostRepository extends JpaRepository<Post, Long> {
 """)
     List<Post> queryAllRecentPosts(@Param("boundary") ZonedDateTime boundary);
 
-    List<Post> queryAllResentPosts(ZonedDateTime boundary);
     default List<Post> readAllRecentPosts(ZonedDateTime boundary) {
         return findAllByCreationTimestampGreaterThan(boundary);
     }
