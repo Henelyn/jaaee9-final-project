@@ -27,7 +27,7 @@ public class PostService {
     //TODO
     //migrate to dto
     //use @ExceptionHandler for dealing with internal issues
-    public List<PostDto> readRecentPosts(){
+    public List<PostDto> readRecentPosts() {
         // 1) create boundary timestamp -in java
         ZonedDateTime boundary = ZonedDateTime.now(Clock.systemUTC()).minusDays(1);
         // 2) ask db of posts created after that boundary
@@ -43,5 +43,18 @@ public class PostService {
 //                .map(post -> postConverter.fromEntityToDto(post))
                 .map(postConverter::fromEntityToDto)
                 .toList();
+    }
+
+    // receipt
+    // 1. convert to entity from dto
+    // 2. store entity into db
+    // 3. return to client dto  based on stored entity (with id and creatTimestamp and updateTimestamp)
+    public PostDto createNewPost(PostDto toStore) { //receiving dto
+        log.info("creating new post: [{}]", toStore);
+        var entityToStore = postConverter.fromDtoToEntity(toStore); // converting
+        var storedEntity = postRepository.save(entityToStore);      // storing
+        var result = postConverter.fromEntityToDto(storedEntity); // converting
+        log.info("created post: [{}]", result);
+        return result;                                                     // returning to user
     }
 }
