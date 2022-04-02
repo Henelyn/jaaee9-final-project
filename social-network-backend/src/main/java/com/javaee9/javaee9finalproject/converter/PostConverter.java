@@ -15,8 +15,8 @@ public class PostConverter implements Converter<PostDto, Post> {
                 .header(postDto.header())
                 .content(postDto.content())
                 .author(postDto.author())
-                .creationTimestamp(ZonedDateTime.parse(postDto.creationTimestamp()))
-                .updateTimestamp(ZonedDateTime.parse(postDto.updateTimestamp()))
+                .creationTimestamp(fromString(postDto.creationTimestamp()))
+                .updateTimestamp(fromString(postDto.updateTimestamp()))
                 .build();
     }
 
@@ -28,5 +28,9 @@ public class PostConverter implements Converter<PostDto, Post> {
                 post.getAuthor(),
                 post.getCreationTimestamp().toString(), //on tdo side its string, therefor we  need to convert it
                 post.getUpdateTimestamp().toString());
+    }
+
+    private ZonedDateTime fromString(String timestamp) {
+        return timestamp != null ? ZonedDateTime.parse(timestamp) : null;
     }
 }

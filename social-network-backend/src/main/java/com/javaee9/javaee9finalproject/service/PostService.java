@@ -51,10 +51,12 @@ public class PostService {
     // 3. return to client dto  based on stored entity (with id and creatTimestamp and updateTimestamp)
     public PostDto createNewPost(PostDto toStore) { //receiving dto
         log.info("creating new post: [{}]", toStore);
-        var entityToStore = postConverter.fromDtoToEntity(toStore); // converting
-        var storedEntity = postRepository.save(entityToStore);      // storing
-        var result = postConverter.fromEntityToDto(storedEntity); // converting
+
+        var entity = postConverter.fromDtoToEntity(toStore); // converting
+        postRepository.save(entity);      // storing
+        var result = postConverter.fromEntityToDto(entity); // converting
+
         log.info("created post: [{}]", result);
-        return result;                                                     // returning to user
+        return result;                                              // returning to user
     }
 }
