@@ -5,6 +5,7 @@ import com.javaee9.javaee9finalproject.service.PostService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -42,7 +43,7 @@ public class PostController {
 
     // TODO: validation
     @PostMapping
-    public PostDto createNewPost(@RequestBody PostDto toStore){ //Spring is trying to read that json
+    public PostDto createNewPost(@Valid @RequestBody PostDto toStore){ //Spring is trying to read that json
         //if you don't have the @RequestBody annotation, Spring does not know where to save the object you passed from Postman.
         // Therefore, you are not using the received json at all, but rather uses an empty object.
         log.info("trying to store new post: [{}]", toStore);
